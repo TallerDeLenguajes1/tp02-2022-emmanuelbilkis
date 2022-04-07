@@ -7,17 +7,25 @@
 int i,j;
 int mt[N][M];
 
-
-int main(int argc, char const *argv[])
+struct computadora
 {
+    float velocidad;
+    int anioFabricacion;
+    int tipoProcesador;
+    int cantNucleos;
+};
 
+
+int main()
+{
+    int *p = mt;
    srand((int)time(NULL));
    for(i = 0;i<N; i++)
   {
     for(j = 0;j<M; j++)
     {
-      mt[i][j]=1+rand()%100;
-      printf("%d", mt[i][j]);
+      *( p + ( i*5 + j ))= 1+rand()%100;
+      printf("%d", *( p + ( i*5 + j )));
     }
     printf("\n");
  }
